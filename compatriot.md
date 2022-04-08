@@ -1,14 +1,14 @@
 ***
-# bi0s Hardware
+# **bi0s Hardware**
 _Narikodan Hridul_
 ***
-# CompatrIoT 
+# **CompatrIoT** 
 ##### Project Proposal
 
 ***
 
-### UART
-##### Universal Asynchronous Reciever-Transmitter
+### **UART**
+##### **Universal Asynchronous Reciever-Transmitter**
 Hence no clock will be involved in the UART
 
 #### UART Connections
@@ -19,7 +19,7 @@ Tx pin of first board is connected to Rx of second and vice versa. And the groun
 
 #### BAUD RATE 
 It is a measure of the speed of data transfer, expressed in bits per second
-Standard baud rate :  2400, 4800, 9600, 256000
+**Standard baud rate** :  2400, 4800, 9600, 256000
 
 
 #### UART CONFIGURATION
@@ -39,14 +39,14 @@ Standard baud rate :  2400, 4800, 9600, 256000
 3. Limited speed is the bottleneck for the application which require highter data transmission rate
 
 #### Packet structure of UART
-[ Start Bit ] - [ Data Frame ] - [ Parity Bit ] - [ Stop Bit ] 
-> Start Bit
+**`[ Start Bit ]`** - **`[ Data Frame ]`** - **`[ Parity Bit ]`** - **`[ Stop Bit ]`** 
+> **Start Bit**
 Idle state of signal is high. To start, this bit is set to low
 
-> Data Frame
+> **Data Frame**
 
 
-> Parity Bits
+> **Parity Bits**
 Its an optional bit used for checking error
  Parity bit = 0 => number of "one" in data frame is even
  Parity bit = 1 => number of "one" in data frame is odd
@@ -56,13 +56,13 @@ Bit is set to high to indicate end of data frame
 
 ---
 ---
-## JTAG
+## **JTAG**
 #### Joint Test Action Group 
 Processors often use JTAG to provide access to their debug/emulation functions and all FPGAs and CPLDs use JTAG to provide access to their programming functions.
-> FPGA - Field Programmable Gate Array.
-  CPLD - Complex Programmable Logic Device 
+> **FPGA** - Field Programmable Gate Array.
+  **CPLD** - Complex Programmable Logic Device 
 
-JTAG is a common hardware interface that provides your computer with a way to communicate directly with the chips on a board. It is an industry standard for verifying designs and testing printed circuit boards after manufacture. 
+**JTAG** is a common hardware interface that provides your computer with a way to communicate directly with the chips on a board. It is an industry standard for verifying designs and testing printed circuit boards after manufacture. 
 
 #### Advantages of JTAG
 - allows the user to stop excecution at any time
@@ -96,10 +96,10 @@ These registers can observe data on the I/O pins, and they can be used to overri
 To gain test access to these registers, there is a separate serial data chain, independent of the functional paths as shown in the above figure.
 
 ##### Typical boundary scan registers can have four different types of 
-1. Passing Data : operation allows _data to pass_ through the registers transparently, without modification. This is the typical state of the circuit during normal functional operation.
- 2. Capturing Data: It _captures data_ coming into the register, without changing its value. This is how test data is observed.
- 3. Updating : It _updates_ the output of the register, disregarding the data coming into the register. This is how stimulus is applied to the circuit under test.
- 4. Serial Shift : It enable test access to each register. _Shifting_ the test response from the boundary registers into an off-board register allows it to be scanned and compared to the expected response.
+**`1. Passing Data :`** operation allows **_data to pass_** through the registers transparently, without modification. This is the typical state of the circuit during normal functional operation.
+ **`2. Capturing Data:`** It **_captures data_** coming into the register, without changing its value. This is how test data is observed.
+**` 3. Updating :`** It **_updates_** the output of the register, disregarding the data coming into the register. This is how stimulus is applied to the circuit under test.
+**` 4. Serial Shift :`** It enable test access to each register. **_Shifting_** the test response from the boundary registers into an off-board register allows it to be scanned and compared to the expected response.
 
 #### Problems faced by JTAG - Boundary Scan
  > When the test department decides to utilize boundary scan, they need to work with the board developers to add it to the design.
@@ -108,24 +108,24 @@ To gain test access to these registers, there is a separate serial data chain, i
  
  >  Finally, someone needs to provide software tools that can gather the information from these different sources and create a program.
  
-> A standard has been developed for boundary scan. Established in 1990 by a team of industry representatives called the "Joint Test Access Group," it became the IEEE 1149.1 standard. The standard is often referred to simply as "JTAG."
+> **A standard has been developed for boundary scan. Established in 1990 by a team of industry representatives called the "Joint Test Access Group," it became the IEEE 1149.1 standard. The standard is often referred to simply as "JTAG."**
 
 --- 
-# JTAG has moved beyond the chip boundary to access the chip's own test structures such as built-in self-test for verifying internal memory and logic.
-# JTAG has become a preferred method for field testing because it allows circuit access without disassembly.
-# Design debugging is another application for JTAG because it enables an unobtrusive way to access the state of the system.
+**`#`** **JTAG has moved beyond the chip boundary to access the chip's own test structures such as built-in self-test for verifying internal memory and logic.**
+**`#`** **JTAG has become a preferred method for field testing because it allows circuit access without disassembly.**
+**`#`** **Design debugging is another application for JTAG because it enables an unobtrusive way to access the state of the system.**
 
 ---
 ---
-## I2C
+## **I2C**
 #### Inter Integrated Circuit
 It is also refered to as IIC. It provides a simple and robust serial communication between a peripheral device and a microcontroller.
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/i2c.jpg)
 
-* It is a synchronous protocol that allows a master to initiate communication with a slave device 
-* I2C protocol is a master-slave communication with the master providing the clock which effectively becomes the data transfer rate or clock frequency 
-* It is a bi-directional bus meaning the master can write to the slave and read from the slave
-* It is a serial bus which means data is clock or shifted bit by bit and there are two bus lines SCL (serial clock) and SDA (serial data)
+* It is a **`synchronous protocol`** that allows a master to initiate communication with a slave device 
+* I2C protocol is a **`master-slave communication`** with the master providing the clock which effectively becomes the data transfer rate or clock frequency 
+* It is a **`bi-directional bus`** meaning the master can write to the slave and read from the slave
+* It is a **`serial bus`** which means data is clock or shifted bit by bit and there are two bus lines **SCL (serial clock) and SDA (serial data)**
 
 #### I2C Speed Chart
 | Speed Category         | Clock Frequency | Bus direction  |
@@ -142,13 +142,14 @@ Out of these Standard-Mode, Fast-Mode, Fast-Mode Plus are the most commonly used
 Here R1 and R2 are the pull-up resistors which are required for I2C devices to communicate properly. This is because I2C protocol works on the premise that the SCL and SDA bus lines are open drain or open collector
 
 #### I2C Advantage
- I2C devices compared to other protocols are slightly lower costs to manufacture 
-*  due to the lower number of logic gates needed to build the I squared C interface
-* it only takes 2 pins to implement which also translates to low cost 
+ I2C devices compared to other protocols are slightly **lower costs** to manufacture 
+**`#`** due to the **lower number of logic gates** needed to build the I squared C interface
+**`#`** it **only takes 2 pins** to implement which also translates to low cost 
 
-This lower cost has made I2C the most common and widely used serial bus across most applications including IOT,  consumer electronics, industrial equipment, automotive and aerospace
+This **lower cost** has made I2C the most common and **widely used serial bus** across most applications including **IOT,  consumer electronics, industrial equipment, automotive and aerospace**
 
 
+ 
 
 
 
@@ -156,7 +157,5 @@ This lower cost has made I2C the most common and widely used serial bus across m
 
 
 ***
-##  THANK YOU 😃
+##  **THANK YOU 😃**
 ***
-
-
