@@ -1,0 +1,51 @@
+>> git init
+ - to initalise a folder as repo locally
+ 
+>> "rm -r .git"
+- delete .git folder (ls -a)
+- [ rm to delete .git ][-r to delete all files inside .git][-rf if .git is 	protected]
+	
+>> git add .
+- to add all files in the folder to github else we can type file name instead of "."
+
+>> git commit -m "this is commit message"
+
+we cannot create repo using terminal 
+
+>> git remote add origin git@github.com:NARIKODANHRIDUL/helloworld.git
+>> git push -u origin master
+
+now our files will be in github
+
+if u made any changes to the files in the repo then
+>> git add .
+>> git commit -m "update"
+>> git push
+
+In github click on commit message
+changed line will be highlighted
+In CODES => COMMITS we can see all the commits we made
+
+
+>> git branch 
+- shows existing branches
+
+>> git branch super
+- creates a new branch named super
+
+>> git checkout super
+- will switch to the destintion branch
+
+>> git checkout -b shooper
+- will create a new branch and switch to it
+
+>> git push --set-upstream origin shooper
+- when initally making changes to any files in in the branch which is created recently
+
+>> git merge shooper
+- go to master with checkout then use this to merge
+
+>> git pull 
+- if you uplaoded files though github and want all the files locally 
+
+>> 
