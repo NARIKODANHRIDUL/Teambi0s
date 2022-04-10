@@ -6,15 +6,15 @@ _Narikodan Hridul_
 ##### Project Proposal
 
 ***
+***
 
-### **UART**
-##### **Universal Asynchronous Reciever-Transmitter**
+## **UART**
+#### **Universal Asynchronous Reciever-Transmitter**
 Hence no clock will be involved in the UART
 
 #### UART Connections
-it is a oneway communication method, so it need 2 wires for to and fro communication
-Tx pin of first board is connected to Rx of second and vice versa. And the ground pin will connected to a common ground.
-   It determine howmany times it check for bits.If 4 High(1) is given together how will we differentiate with one long High(1), there comes baud rate.
+It is a oneway communication method, so it need 2 wires for to and fro communication
+Tx pin of first board is connected to Rx of second and vice versa. And the ground pin will connected to a common ground. It determine howmany times it check for bits. If 4 High(1) is given together how will we differentiate with one long High(1), there comes baud rate.
 ![](https://github.com/NARIKODANHRIDUL/RANDOM-1/blob/main/uart.jpg?raw=true)
 
 #### BAUD RATE 
@@ -44,7 +44,7 @@ It is a measure of the speed of data transfer, expressed in bits per second
 Idle state of signal is high. To start, this bit is set to low
 
 > **Data Frame**
-
+Data to be tranferred
 
 > **Parity Bits**
 Its an optional bit used for checking error
@@ -64,7 +64,7 @@ Processors often use JTAG to provide access to their debug/emulation functions a
 
 **JTAG** is a common hardware interface that provides your computer with a way to communicate directly with the chips on a board. It is an industry standard for verifying designs and testing printed circuit boards after manufacture. 
 
-#### Advantages of JTAG
+#### JTAG Advantages 
 - allows the user to stop excecution at any time
 - allows you to manipulate and examine the status of a supported AVR while it is running in a circuit. 
 - shorter test times
@@ -117,7 +117,7 @@ To gain test access to these registers, there is a separate serial data chain, i
 
 ---
 ---
-## **I2C**
+## **I^2^C**
 #### Inter Integrated Circuit
 It is also refered to as IIC. It provides a simple and robust serial communication between a peripheral device and a microcontroller.
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/i2c.jpg)
@@ -127,13 +127,13 @@ It is also refered to as IIC. It provides a simple and robust serial communicati
 * It is a **`bi-directional bus`** meaning the master can write to the slave and read from the slave
 * It is a **`serial bus`** which means data is clock or shifted bit by bit and there are two bus lines **SCL (serial clock) and SDA (serial data)**
 
-#### I2C Speed Chart
+#### I^2^C Speed Chart
 | Speed Category         | Clock Frequency | Bus direction  |
 |:----------------------:|:---------------:|:--------------:|
 |Standard-Mode(SM)       | Up to 100 KHz   | Bidirectional  |
 | Fast-Mode(FM)          | Up to 400 KHz   | Bidirectional  |
 | Fast-Mode Plus(FM+)    | Up to 1 MHz     | Bidirectional  |
-|High-Speed Mode(HS)| Up to 3.4 MHz   | Bidirectional  |
+|High-Speed Mode(HS)     | Up to 3.4 MHz   | Bidirectional  |
 | Ultra-Fast Mode (UFM)  | Up to 5.0 MHz   | Unidirectional |
 
 Out of these Standard-Mode, Fast-Mode, Fast-Mode Plus are the most commonly used as they can be implemented easily
@@ -141,10 +141,44 @@ Out of these Standard-Mode, Fast-Mode, Fast-Mode Plus are the most commonly used
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/i2cexample.jpg)
 Here R1 and R2 are the pull-up resistors which are required for I2C devices to communicate properly. This is because I2C protocol works on the premise that the SCL and SDA bus lines are open drain or open collector
 
-#### I2C Advantage
+#### Data frame structure of I^2^C
+**`[Start Bit]`**-**`[Slave Address]`**-**`[R/W]`**-**`[ACK]`**-**`[Register Address]`**-**`[ACK]`**-**`[ Data ]`**-**`[ACK]`**-**`[Stop Bit]`**
+> **Start Bit**
+Idle state of signal(both SCL and SDA) is high. To start, this SDA is set to low keeping SCL high.
+
+> **Slave Address** - 7 or 10 bit
+Address of the slave to which the master want to communicate
+
+> **R/W** (Read/Write) 
+SDL = **HIGH** => To recieve data from slave
+SDL = **LOW** => To send data to slave
+
+> **ACK** (Acknowledgement bit)
+If the data frame is received successfully then ACK bit (**LOW**) is sent to the sender by the receiver.  
+
+> **Register Addresss** - 8 bit
+Address of the register in the slave to which the master want to communicate
+
+> **Data**
+Data to be tranferred
+
+>**Stop bits** 
+Bit is set to high to indicate end of data frame
+
+`If the master wants to send more data to this slave it does not have to do all the initial  process again, it will just add one more bit sequence of data after ACK and send to the slave before the stop bit & it can be done several times.`
+
+
+
+#### I^2^C Advantage
  I2C devices compared to other protocols are slightly **lower costs** to manufacture 
-**`#`** due to the **lower number of logic gates** needed to build the I squared C interface
+**`#`** due to the **lower number of logic gates** needed to build the I^2^C interface
 **`#`** it **only takes 2 pins** to implement which also translates to low cost 
+**`#`** Can be configured in **multi-master mode**.
+**`#`** It uses ACK/NACK feature due to which it has **improved error handling** capabilities.
+
+#### I^2^C Disadvantage
+**`#`** **Slower** speed.
+**`#`** **Half-duplex communication** is used in the I2C communication protocol.
 
 This **lower cost** has made I2C the most common and **widely used serial bus** across most applications including **IOT,  consumer electronics, industrial equipment, automotive and aerospace**
 
@@ -154,36 +188,35 @@ This **lower cost** has made I2C the most common and **widely used serial bus** 
 It was developed by Motorola to provide **full duplex synchronous serial communicarion** between **master and slave devices**. For every clock cycles one bit is transfered. A communication protocal thast uses **4 wires**.
 
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/SPI.jpg)
-
 ##### 4-wire SPI devices have four signals:
-* Clock (SPI CLK, SCLK)
-* Chip select (CS)
-* main out, subnode in (MOSI)
-* main in, subnode out (MISO)
+* SCLK (Serial Clock) 
+* CS' (Chip select) 
+* MOSI (main out, subnode in OR Master Out Slave in)
+* MISO (main in, subnode out OR Master In Slave Out) 
 
 **`#`** The device that generates the clock signal is called the main. 
-
 **`#`** Data transmitted between the main and the subnode is synchronized to the clock generated by the main. 
-
-**`#`** SPI devices support much higher clock frequencies compared to I2C interfaces. 
-
+**`#`** SPI devices support much higher clock frequencies(MHz) compared to I2C(KHz) interfaces. 
 **`#`** Users should consult the product data sheet for the clock frequency specification of the SPI interface.
-
 **`#`** SPI interfaces can have only one main and can have one or multiple subnodes. Above figure shows the SPI connection between the main and the subnode.
 
+#### Daisy chain architechure 
+![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/daisyspi.jpg)
+When we use multiple slave, then we need multiple chip select line. This can be eliminated by using Daisy chain method.
+In this method just one Chip Select line is connected to all the slave. MOSI pin of Master is connected to MOSI of the slave 1. MISO of the slave 1 is connected to MOSI of the slave 2. This continues and MISO of the last slave will be connected to the MISO of the master. Serial In Serail Out (SISO) method is used here.
+![](https://electrosome.com/wp-content/uploads/2017/04/SPI-Working-Data-Transfer.gif)
 
-#### Advantages
-* No start and stop bits, so the data can be streamed continuously without interruption
-* No complicated slave addressing system like I2C
-* Higher data transfer rate than I2C (almost twice as fast)
-* Separate MISO and MOSI lines, so data can be sent and received at the same time
+#### SPI Advantages 
+* No start and stop bits, so the data can be **streamed continuously without interruption**.
+* **No complicated slave addressing** system like I^2^C.
+* **Higher data transfer rate** than I2C (almost twice as fast).
+* Separate MISO and MOSI lines, so data can be **sent and received at the same time**.
 
-#### Disadvantages
-* Uses four wires (I2C and UARTs use two)
-* No acknowledgement that the data has been successfully received (I2C has this)
-* No form of error checking like the parity bit in UART
-* Only allows for a single master
-
+#### SPI Disadvantages 
+* Uses **four wires** (I2C and UARTs use two).
+* **No acknowledgement** that the data has been successfully received (I2C has this).
+* **No form of error checking** like the parity bit in UART.
+* Only allows for a **single master**.
 
 
 
