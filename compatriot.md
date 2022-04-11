@@ -117,7 +117,7 @@ To gain test access to these registers, there is a separate serial data chain, i
 
 ---
 ---
-## **I^2^C**
+## **I2C**
 #### Inter Integrated Circuit
 It is also refered to as IIC. It provides a simple and robust serial communication between a peripheral device and a microcontroller.
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/i2c.jpg)
@@ -127,7 +127,7 @@ It is also refered to as IIC. It provides a simple and robust serial communicati
 * It is a **`bi-directional bus`** meaning the master can write to the slave and read from the slave
 * It is a **`serial bus`** which means data is clock or shifted bit by bit and there are two bus lines **SCL (serial clock) and SDA (serial data)**
 
-#### I^2^C Speed Chart
+#### I2C Speed Chart
 | Speed Category         | Clock Frequency | Bus direction  |
 |:----------------------:|:---------------:|:--------------:|
 |Standard-Mode(SM)       | Up to 100 KHz   | Bidirectional  |
@@ -141,7 +141,7 @@ Out of these Standard-Mode, Fast-Mode, Fast-Mode Plus are the most commonly used
 ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/i2cexample.jpg)
 Here R1 and R2 are the pull-up resistors which are required for I2C devices to communicate properly. This is because I2C protocol works on the premise that the SCL and SDA bus lines are open drain or open collector
 
-#### Data frame structure of I^2^C
+#### Data frame structure of I2C
 **`[Start Bit]`**-**`[Slave Address]`**-**`[R/W]`**-**`[ACK]`**-**`[Register Address]`**-**`[ACK]`**-**`[ Data ]`**-**`[ACK]`**-**`[Stop Bit]`**
 > **Start Bit**
 Idle state of signal(both SCL and SDA) is high. To start, this SDA is set to low keeping SCL high.
@@ -169,14 +169,14 @@ Bit is set to high to indicate end of data frame
 
 
 
-#### I^2^C Advantage
+#### I2C Advantage
  I2C devices compared to other protocols are slightly **lower costs** to manufacture 
-**`#`** due to the **lower number of logic gates** needed to build the I^2^C interface
+**`#`** due to the **lower number of logic gates** needed to build the I2C interface
 **`#`** it **only takes 2 pins** to implement which also translates to low cost 
 **`#`** Can be configured in **multi-master mode**.
 **`#`** It uses ACK/NACK feature due to which it has **improved error handling** capabilities.
 
-#### I^2^C Disadvantage
+#### I2C Disadvantage
 **`#`** **Slower** speed.
 **`#`** **Half-duplex communication** is used in the I2C communication protocol.
 
@@ -208,7 +208,7 @@ In this method just one Chip Select line is connected to all the slave. MOSI pin
 
 #### SPI Advantages 
 * No start and stop bits, so the data can be **streamed continuously without interruption**.
-* **No complicated slave addressing** system like I^2^C.
+* **No complicated slave addressing** system like I2C.
 * **Higher data transfer rate** than I2C (almost twice as fast).
 * Separate MISO and MOSI lines, so data can be **sent and received at the same time**.
 
