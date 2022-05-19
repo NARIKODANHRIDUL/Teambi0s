@@ -48,4 +48,15 @@ In CODES => COMMITS we can see all the commits we made
 >> git pull 
 - if you uplaoded files though github and want all the files locally 
 
->> 
+>> git log
+- will show.....
+'''
+commit e3553ce032dc5177c9761882e86a41828a2ba4d5
+Author: NARIKODAN HRIDUL <narikodanhridul@gmail.com>
+Date:   Thu May 19 18:32:11 2022 +0530
+'''
+.... last 10 commits [copy the code for respective commits and use it to show changes made in the code]
+
+>> git show e3553ce032dc5177c9761882e86a41828a2ba4d5
+- will show the code with changes marked in it
+
