@@ -60,3 +60,6 @@ Date:   Thu May 19 18:32:11 2022 +0530
 >> git show e3553ce032dc5177c9761882e86a41828a2ba4d5
 - will show the code with changes marked in it
 
+>> gitk
+- will open a window to see the changes (user friendly)
+
