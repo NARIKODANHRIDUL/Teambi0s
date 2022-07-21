@@ -10,7 +10,7 @@ _Narikodan Hridul_
 Twenty-one-year-old Paras Jha and twenty-year-old Josiah White co-founded Protraf Solutions, a company offering mitigation services for DDoS attacks.
 
 In 2016, the Mirai botnet shut down a large portion of the internet, including Twitter, Netflix, CNN and other major sites, as well as major Russian banks and the entire country of Liberia. Mirai took advantage of unsecured internet Of things devices such as security cameras, installing malware that then attacked the DYN servers that route internet traffic. Mirai's attack peaked at an unprecedented 1Tbps and is estimated to have used about 145,000 devices within the assault
-![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/mirai%20botnet.jpg)
+![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/mirai%20botnet.jpg)
 
 It is commonly used in **Distributed Denial of Service** (DDoS) attacks, botnets can also take advantage of their collective computing power to send large volumes of spam, steal credentials at scale, or spy on people and organizations. Malicious actors build botnets by infecting connected devices with malware and then managing them using a command and control server.
 Once an attacker has compromised a device on a specific network, all the vulnerable devices on that network are at risk of being infected.
@@ -34,7 +34,7 @@ Due to the distributed nature of these machines, they can use to generate distri
 #### Why we can’t stop botnets  
 * The challenges to shutting botnets down include the widespread availability and ongoing **purchases of insecure devices**, the near **impossibility of simply locking infected machines** out of the internet, and difficulty tracking down and prosecuting the botnet creators. 
 * Many home and business **users are unaware of the threat of botnets** and how to prevent them. 
-* Product developers, manufacturers, and vendors are **motivated to minimize cost and time** to market, rather than to build in security or offer efficient security updates![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/11.jpg)
+* Product developers, manufacturers, and vendors are **motivated to minimize cost and time** to market, rather than to build in security or offer efficient security updates![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/11.jpg)
 
 ---
 
@@ -42,17 +42,17 @@ Due to the distributed nature of these machines, they can use to generate distri
 The Council to Secure the Digital Economy, in cooperation with the Information Technology Industry Council, USTelecom and other organizations, recently released a comprehensive guide to defending enterprises against botnets.
 ##### Here are the top 4 recommendations.
   1. **Updates**
-  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/1.jpg)
+  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/1.jpg)
 Botnets use unpatched vulnerabilities to spread from machine to machine so that they can cause maximum damage in an enterprise. The first line of defense should be to keep all systems updated.
 
   2. **Lock down access** 
-  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/2.jpg)
+  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/2.jpg)
 Many guide recommends that enterprises deploy multi-factor and risk-based authentication, least privilege, and other best practices for access controls. 
   3. **Don't go it alone**
-  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/3.jpg)
+  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/3.jpg)
 Some anti-bot guide recommends several areas in which enterprises can benefit by looking to external partners for help. For example, there are many channels in which enterprises can share threat information, such as industry groups, and vendor-sponsored platforms.
   4. **Deepen your defenses**
-  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/RANDOM-1/main/4.jpg)
+  ![](https://raw.githubusercontent.com/NARIKODANHRIDUL/imagedump/master/4.jpg)
 It's no longer enough to secure the perimeter or endpoint devices. You need multiple defensive systems. Isolating IoT devices on a separate part of the network is one recommended approach.
 
 ***
